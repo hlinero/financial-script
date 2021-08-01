@@ -1,3 +1,6 @@
+# Ignore config file
+*.yaml
+
 # macOS
 .DS_Store
 
