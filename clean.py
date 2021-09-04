@@ -37,7 +37,7 @@ def __format_amount(df):
     new_amount_column = []
 
     for index, row in df.iterrows():
-        new_amount_column.append(float(row[Column.AMOUNT.value].replace(",", "").replace(" ", "")))
+        new_amount_column.append(float(row[Column.AMOUNT.value].replace(",", "").replace(" ", "").replace(".",""))*float(0.01))
 
     df.drop(columns=[Column.AMOUNT.value], inplace = True)
 
