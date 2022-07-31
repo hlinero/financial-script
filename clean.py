@@ -25,7 +25,7 @@ def __format_date(df):
     new_date_column = []
     
     for index, row in df.iterrows():
-        original_date = parser.parse(row[Column.DATE.value])
+        original_date = row[Column.DATE.value]
         new_date_column.append(original_date.strftime(format))
     
     df.drop(columns=[Column.DATE.value], inplace = True)
@@ -37,7 +37,7 @@ def __format_amount(df):
     new_amount_column = []
 
     for index, row in df.iterrows():
-        new_amount_column.append(float(row[Column.AMOUNT.value].replace(",", "").replace(" ", "").replace(".",""))*float(0.01))
+        new_amount_column.append(row[Column.AMOUNT.value])
 
     df.drop(columns=[Column.AMOUNT.value], inplace = True)
 

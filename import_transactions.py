@@ -4,7 +4,7 @@ def import_transactions(list_of_filenames):
     list_of_df = []
 
     for filename in list_of_filenames:
-        df_local = pd.read_csv(filename)
+        df_local = pd.read_excel(filename)
         list_of_df.append(df_local)
 
     df_total = pd.concat(list_of_df)
